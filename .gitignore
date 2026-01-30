@@ -32,6 +32,8 @@ yarn-error.*
 
 # local env files
 .env*.local
+.env
+server/.env
 
 # typescript
 *.tsbuildinfo
@@ -39,3 +41,27 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# ---------------------------------------------------------------------------
+# Python / ML (keep repo lean)
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+venv/
+.venv/
+ml/venv/
+
+# Local training artifacts / large datasets (regeneratable)
+ml/data/kaggle_talisay/fruit/
+ml/data/kaggle_talisay/prepared/
+ml/data/synthetic_dataset.csv
+
+# Debug images generated during experiments
+ml/test_images/false_positive_kaggle.jpg
+ml/test_images/fp_debug.jpg

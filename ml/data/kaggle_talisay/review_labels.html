@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Talisay Fruit Label Review</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; margin-top: 30px; border-bottom: 2px solid #3498db; }
+        .container { display: flex; flex-wrap: wrap; gap: 15px; }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 220px;
+        }
+        .card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .card .info { margin-top: 8px; font-size: 12px; }
+        .card .filename { font-weight: bold; word-break: break-all; }
+        .card .confidence { color: #27ae60; }
+        .card .spots { color: #e67e22; }
+        .low-confidence { border: 3px solid #e74c3c; }
+        .green-section h2 { color: #27ae60; border-color: #27ae60; }
+        .yellow-section h2 { color: #f1c40f; border-color: #f1c40f; }
+        .brown-section h2 { color: #8b4513; border-color: #8b4513; }
+        .summary { background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>🌰 Talisay Fruit Label Review</h1>
+    
+    <div class="summary">
+        <h3>Summary</h3>
+        <p>Total images: 62</p>
+        <ul>
+            <li><span style="color:#27ae60">Green:</span> 56</li>
+            <li><span style="color:#f1c40f">Yellow:</span> 6</li>
+            <li><span style="color:#8b4513">Brown:</span> 0</li>
+        </ul>
+        <p><em>Images with red border have low confidence (&lt;70%) - review carefully!</em></p>
+    </div>
+
+    <div class="green-section">
+        <h2>GREEN (56 images)</h2>
+        <div class="container">
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 20 52 PM (1).jpg" alt="Photo 08-27-22, 2 20 52 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 20 52 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 99.8%</div>
+                    <br><span class='spots'>Spots: 29.3%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 20 52 PM.jpg" alt="Photo 08-27-22, 2 20 52 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 20 52 PM.jpg</div>
+                    <div class="confidence">Confidence: 99.8%</div>
+                    <br><span class='spots'>Spots: 29.5%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 20 51 PM.jpg" alt="Photo 08-27-22, 2 20 51 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 20 51 PM.jpg</div>
+                    <div class="confidence">Confidence: 99.6%</div>
+                    <br><span class='spots'>Spots: 28.8%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 10 34 46 AM (1).jpg" alt="Photo 08-21-22, 10 34 46 AM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 10 34 46 AM (1).jpg</div>
+                    <div class="confidence">Confidence: 95.4%</div>
+                    <br><span class='spots'>Spots: 36.4%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 10 34 45 AM (4).jpg" alt="Photo 08-21-22, 10 34 45 AM (4).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 10 34 45 AM (4).jpg</div>
+                    <div class="confidence">Confidence: 95.3%</div>
+                    <br><span class='spots'>Spots: 36.2%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 10 34 46 AM.jpg" alt="Photo 08-21-22, 10 34 46 AM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 10 34 46 AM.jpg</div>
+                    <div class="confidence">Confidence: 95.3%</div>
+                    <br><span class='spots'>Spots: 36.1%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 10 34 45 AM (3).jpg" alt="Photo 08-21-22, 10 34 45 AM (3).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 10 34 45 AM (3).jpg</div>
+                    <div class="confidence">Confidence: 95.1%</div>
+                    <br><span class='spots'>Spots: 36.3%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 10 34 45 AM (2).jpg" alt="Photo 08-21-22, 10 34 45 AM (2).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 10 34 45 AM (2).jpg</div>
+                    <div class="confidence">Confidence: 95.1%</div>
+                    <br><span class='spots'>Spots: 35.9%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 10 34 45 AM (1).jpg" alt="Photo 08-21-22, 10 34 45 AM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 10 34 45 AM (1).jpg</div>
+                    <div class="confidence">Confidence: 94.9%</div>
+                    <br><span class='spots'>Spots: 35.5%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 12 40 04 PM.jpg" alt="Photo 08-21-22, 12 40 04 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 12 40 04 PM.jpg</div>
+                    <div class="confidence">Confidence: 94.7%</div>
+                    <br><span class='spots'>Spots: 40.7%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 10 34 45 AM.jpg" alt="Photo 08-21-22, 10 34 45 AM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 10 34 45 AM.jpg</div>
+                    <div class="confidence">Confidence: 94.5%</div>
+                    <br><span class='spots'>Spots: 35.6%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 10 34 44 AM.jpg" alt="Photo 08-21-22, 10 34 44 AM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 10 34 44 AM.jpg</div>
+                    <div class="confidence">Confidence: 94.5%</div>
+                    <br><span class='spots'>Spots: 35.2%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 20 54 PM.jpg" alt="Photo 08-27-22, 2 20 54 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 20 54 PM.jpg</div>
+                    <div class="confidence">Confidence: 93.8%</div>
+                    <br><span class='spots'>Spots: 43.2%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 12 40 05 PM.jpg" alt="Photo 08-21-22, 12 40 05 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 12 40 05 PM.jpg</div>
+                    <div class="confidence">Confidence: 93.7%</div>
+                    <br><span class='spots'>Spots: 40.0%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 12 40 06 PM.jpg" alt="Photo 08-21-22, 12 40 06 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 12 40 06 PM.jpg</div>
+                    <div class="confidence">Confidence: 93.7%</div>
+                    <br><span class='spots'>Spots: 41.2%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 12 40 06 PM (1).jpg" alt="Photo 08-21-22, 12 40 06 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 12 40 06 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 93.6%</div>
+                    <br><span class='spots'>Spots: 39.9%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 12 40 03 PM.jpg" alt="Photo 08-21-22, 12 40 03 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 12 40 03 PM.jpg</div>
+                    <div class="confidence">Confidence: 93.3%</div>
+                    <br><span class='spots'>Spots: 39.2%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 12 40 03 PM (1).jpg" alt="Photo 08-21-22, 12 40 03 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 12 40 03 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 93.3%</div>
+                    <br><span class='spots'>Spots: 40.3%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-21-22, 12 40 02 PM.jpg" alt="Photo 08-21-22, 12 40 02 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-21-22, 12 40 02 PM.jpg</div>
+                    <div class="confidence">Confidence: 92.3%</div>
+                    <br><span class='spots'>Spots: 39.9%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 20 53 PM (1).jpg" alt="Photo 08-27-22, 2 20 53 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 20 53 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 91.7%</div>
+                    <br><span class='spots'>Spots: 44.5%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 20 53 PM.jpg" alt="Photo 08-27-22, 2 20 53 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 20 53 PM.jpg</div>
+                    <div class="confidence">Confidence: 91.3%</div>
+                    <br><span class='spots'>Spots: 40.2%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 46 PM.jpg" alt="Photo 08-20-22, 4 38 46 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 46 PM.jpg</div>
+                    <div class="confidence">Confidence: 90.1%</div>
+                    <br><span class='spots'>Spots: 34.0%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 39 07 PM.jpg" alt="Photo 08-27-22, 1 39 07 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 39 07 PM.jpg</div>
+                    <div class="confidence">Confidence: 89.1%</div>
+                    <br><span class='spots'>Spots: 41.8%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 39 08 PM (1).jpg" alt="Photo 08-27-22, 1 39 08 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 39 08 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 87.8%</div>
+                    <br><span class='spots'>Spots: 41.4%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 50 PM (1).jpg" alt="Photo 08-20-22, 4 38 50 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 50 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 87.2%</div>
+                    <br><span class='spots'>Spots: 38.5%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 50 PM.jpg" alt="Photo 08-20-22, 4 38 50 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 50 PM.jpg</div>
+                    <div class="confidence">Confidence: 87.1%</div>
+                    <br><span class='spots'>Spots: 39.4%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 48 PM.jpg" alt="Photo 08-20-22, 4 38 48 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 48 PM.jpg</div>
+                    <div class="confidence">Confidence: 86.3%</div>
+                    <br><span class='spots'>Spots: 40.3%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 39 09 PM (1).jpg" alt="Photo 08-27-22, 1 39 09 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 39 09 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 84.3%</div>
+                    <br><span class='spots'>Spots: 41.8%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 39 08 PM.jpg" alt="Photo 08-27-22, 1 39 08 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 39 08 PM.jpg</div>
+                    <div class="confidence">Confidence: 84.2%</div>
+                    <br><span class='spots'>Spots: 42.4%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 39 09 PM.jpg" alt="Photo 08-27-22, 1 39 09 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 39 09 PM.jpg</div>
+                    <div class="confidence">Confidence: 84.1%</div>
+                    <br><span class='spots'>Spots: 42.1%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 39 10 PM.jpg" alt="Photo 08-27-22, 1 39 10 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 39 10 PM.jpg</div>
+                    <div class="confidence">Confidence: 84.1%</div>
+                    <br><span class='spots'>Spots: 40.5%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 39 07 PM (1).jpg" alt="Photo 08-27-22, 1 39 07 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 39 07 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 84.1%</div>
+                    <br><span class='spots'>Spots: 42.5%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 48 26 PM.jpg" alt="Photo 08-27-22, 1 48 26 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 48 26 PM.jpg</div>
+                    <div class="confidence">Confidence: 76.8%</div>
+                    <br><span class='spots'>Spots: 21.5%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 28 PM.jpg" alt="Photo 08-20-22, 4 38 28 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 28 PM.jpg</div>
+                    <div class="confidence">Confidence: 76.1%</div>
+                    <br><span class='spots'>Spots: 38.7%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 20 50 PM (1).jpg" alt="Photo 08-27-22, 2 20 50 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 20 50 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 75.1%</div>
+                    <br><span class='spots'>Spots: 44.8%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 51 PM.jpg" alt="Photo 08-20-22, 4 38 51 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 51 PM.jpg</div>
+                    <div class="confidence">Confidence: 71.4%</div>
+                    <br><span class='spots'>Spots: 42.0%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 20 50 PM.jpg" alt="Photo 08-27-22, 2 20 50 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 20 50 PM.jpg</div>
+                    <div class="confidence">Confidence: 66.6%</div>
+                    <br><span class='spots'>Spots: 44.2%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 48 29 PM.jpg" alt="Photo 08-27-22, 1 48 29 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 48 29 PM.jpg</div>
+                    <div class="confidence">Confidence: 65.3%</div>
+                    <br><span class='spots'>Spots: 21.3%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 48 28 PM (1).jpg" alt="Photo 08-27-22, 1 48 28 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 48 28 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 64.2%</div>
+                    <br><span class='spots'>Spots: 22.0%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 49 PM.jpg" alt="Photo 08-20-22, 4 38 49 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 49 PM.jpg</div>
+                    <div class="confidence">Confidence: 60.2%</div>
+                    <br><span class='spots'>Spots: 43.1%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 48 27 PM (1).jpg" alt="Photo 08-27-22, 1 48 27 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 48 27 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 60.1%</div>
+                    <br><span class='spots'>Spots: 22.8%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 48 26 PM (1).jpg" alt="Photo 08-27-22, 1 48 26 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 48 26 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 60.0%</div>
+                    <br><span class='spots'>Spots: 23.5%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 48 27 PM.jpg" alt="Photo 08-27-22, 1 48 27 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 48 27 PM.jpg</div>
+                    <div class="confidence">Confidence: 60.0%</div>
+                    <br><span class='spots'>Spots: 22.8%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 48 28 PM.jpg" alt="Photo 08-27-22, 1 48 28 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 48 28 PM.jpg</div>
+                    <div class="confidence">Confidence: 59.8%</div>
+                    <br><span class='spots'>Spots: 23.2%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 09 49 PM (1).jpg" alt="Photo 08-27-22, 2 09 49 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 09 49 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 58.7%</div>
+                    <br><span class='spots'>Spots: 38.6%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 09 48 PM.jpg" alt="Photo 08-27-22, 2 09 48 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 09 48 PM.jpg</div>
+                    <div class="confidence">Confidence: 58.1%</div>
+                    <br><span class='spots'>Spots: 37.5%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 09 49 PM.jpg" alt="Photo 08-27-22, 2 09 49 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 09 49 PM.jpg</div>
+                    <div class="confidence">Confidence: 57.6%</div>
+                    <br><span class='spots'>Spots: 39.8%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 09 50 PM.jpg" alt="Photo 08-27-22, 2 09 50 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 09 50 PM.jpg</div>
+                    <div class="confidence">Confidence: 56.5%</div>
+                    <br><span class='spots'>Spots: 42.0%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 09 51 PM (1).jpg" alt="Photo 08-27-22, 2 09 51 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 09 51 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 56.5%</div>
+                    <br><span class='spots'>Spots: 44.0%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 09 52 PM.jpg" alt="Photo 08-27-22, 2 09 52 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 09 52 PM.jpg</div>
+                    <div class="confidence">Confidence: 56.5%</div>
+                    <br><span class='spots'>Spots: 42.6%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 09 51 PM.jpg" alt="Photo 08-27-22, 2 09 51 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 09 51 PM.jpg</div>
+                    <div class="confidence">Confidence: 56.2%</div>
+                    <br><span class='spots'>Spots: 42.2%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 09 50 PM (1).jpg" alt="Photo 08-27-22, 2 09 50 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 09 50 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 56.2%</div>
+                    <br><span class='spots'>Spots: 42.4%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 09 52 PM (1).jpg" alt="Photo 08-27-22, 2 09 52 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 09 52 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 56.0%</div>
+                    <br><span class='spots'>Spots: 42.8%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 1 48 26 PM (2).jpg" alt="Photo 08-27-22, 1 48 26 PM (2).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 1 48 26 PM (2).jpg</div>
+                    <div class="confidence">Confidence: 55.2%</div>
+                    <br><span class='spots'>Spots: 26.4%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 49 PM (1).jpg" alt="Photo 08-20-22, 4 38 49 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 49 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 51.9%</div>
+                    <br><span class='spots'>Spots: 44.1%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 28 PM (1).jpg" alt="Photo 08-20-22, 4 38 28 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 28 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 48.5%</div>
+                    <br><span class='spots'>Spots: 43.1%</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="yellow-section">
+        <h2>YELLOW (6 images)</h2>
+        <div class="container">
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 20 49 PM.jpg" alt="Photo 08-27-22, 2 20 49 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 20 49 PM.jpg</div>
+                    <div class="confidence">Confidence: 70.4%</div>
+                    <br><span class='spots'>Spots: 47.5%</span>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-27-22, 2 20 48 PM.jpg" alt="Photo 08-27-22, 2 20 48 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-27-22, 2 20 48 PM.jpg</div>
+                    <div class="confidence">Confidence: 70.1%</div>
+                    <br><span class='spots'>Spots: 47.1%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 22 PM (1).jpg" alt="Photo 08-20-22, 4 38 22 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 22 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 69.0%</div>
+                    <br><span class='spots'>Spots: 45.1%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 26 PM (1).jpg" alt="Photo 08-20-22, 4 38 26 PM (1).jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 26 PM (1).jpg</div>
+                    <div class="confidence">Confidence: 67.5%</div>
+                    <br><span class='spots'>Spots: 47.6%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 22 PM.jpg" alt="Photo 08-20-22, 4 38 22 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 22 PM.jpg</div>
+                    <div class="confidence">Confidence: 52.5%</div>
+                    <br><span class='spots'>Spots: 42.6%</span>
+                </div>
+            </div>
+
+            <div class="card low-confidence">
+                <img src="file:///data/kaggle_talisay/fruit/Photo 08-20-22, 4 38 26 PM.jpg" alt="Photo 08-20-22, 4 38 26 PM.jpg">
+                <div class="info">
+                    <div class="filename">Photo 08-20-22, 4 38 26 PM.jpg</div>
+                    <div class="confidence">Confidence: 52.4%</div>
+                    <br><span class='spots'>Spots: 45.7%</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="brown-section">
+        <h2>BROWN (0 images)</h2>
+        <div class="container">
+
+        </div>
+    </div>
+
+</body>
+</html>

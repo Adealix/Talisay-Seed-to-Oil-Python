@@ -1,0 +1,932 @@
+{
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 22 PM (1).jpg": {
+    "filename": "Photo 08-20-22, 4 38 22 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 22 PM (1).jpg",
+    "predicted_color": "yellow",
+    "confidence": 0.6898,
+    "probabilities": {
+      "green": 0.2077,
+      "yellow": 0.6898,
+      "brown": 0.1025
+    },
+    "has_spots": true,
+    "spot_coverage": 45.1,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 22 PM.jpg": {
+    "filename": "Photo 08-20-22, 4 38 22 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 22 PM.jpg",
+    "predicted_color": "yellow",
+    "confidence": 0.5246,
+    "probabilities": {
+      "green": 0.4345,
+      "yellow": 0.5246,
+      "brown": 0.0408
+    },
+    "has_spots": true,
+    "spot_coverage": 42.6,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 26 PM (1).jpg": {
+    "filename": "Photo 08-20-22, 4 38 26 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 26 PM (1).jpg",
+    "predicted_color": "yellow",
+    "confidence": 0.6747,
+    "probabilities": {
+      "green": 0.2415,
+      "yellow": 0.6747,
+      "brown": 0.0838
+    },
+    "has_spots": true,
+    "spot_coverage": 47.6,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 26 PM.jpg": {
+    "filename": "Photo 08-20-22, 4 38 26 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 26 PM.jpg",
+    "predicted_color": "yellow",
+    "confidence": 0.524,
+    "probabilities": {
+      "green": 0.4269,
+      "yellow": 0.524,
+      "brown": 0.0491
+    },
+    "has_spots": true,
+    "spot_coverage": 45.7,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 28 PM (1).jpg": {
+    "filename": "Photo 08-20-22, 4 38 28 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 28 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.4851,
+    "probabilities": {
+      "green": 0.4851,
+      "yellow": 0.4621,
+      "brown": 0.0528
+    },
+    "has_spots": true,
+    "spot_coverage": 43.1,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 28 PM.jpg": {
+    "filename": "Photo 08-20-22, 4 38 28 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 28 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.7609,
+    "probabilities": {
+      "green": 0.7609,
+      "yellow": 0.2234,
+      "brown": 0.0157
+    },
+    "has_spots": true,
+    "spot_coverage": 38.7,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 46 PM.jpg": {
+    "filename": "Photo 08-20-22, 4 38 46 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 46 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.9012,
+    "probabilities": {
+      "green": 0.9012,
+      "yellow": 0.0849,
+      "brown": 0.0139
+    },
+    "has_spots": true,
+    "spot_coverage": 34.0,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 48 PM.jpg": {
+    "filename": "Photo 08-20-22, 4 38 48 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 48 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.8633,
+    "probabilities": {
+      "green": 0.8633,
+      "yellow": 0.1202,
+      "brown": 0.0165
+    },
+    "has_spots": true,
+    "spot_coverage": 40.3,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 49 PM (1).jpg": {
+    "filename": "Photo 08-20-22, 4 38 49 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 49 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.5187,
+    "probabilities": {
+      "green": 0.5187,
+      "yellow": 0.4443,
+      "brown": 0.037
+    },
+    "has_spots": true,
+    "spot_coverage": 44.1,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 49 PM.jpg": {
+    "filename": "Photo 08-20-22, 4 38 49 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 49 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.6019,
+    "probabilities": {
+      "green": 0.6019,
+      "yellow": 0.3658,
+      "brown": 0.0324
+    },
+    "has_spots": true,
+    "spot_coverage": 43.1,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 50 PM (1).jpg": {
+    "filename": "Photo 08-20-22, 4 38 50 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 50 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.8724,
+    "probabilities": {
+      "green": 0.8724,
+      "yellow": 0.1115,
+      "brown": 0.0161
+    },
+    "has_spots": true,
+    "spot_coverage": 38.5,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 50 PM.jpg": {
+    "filename": "Photo 08-20-22, 4 38 50 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 50 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.8707,
+    "probabilities": {
+      "green": 0.8707,
+      "yellow": 0.1149,
+      "brown": 0.0145
+    },
+    "has_spots": true,
+    "spot_coverage": 39.4,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 51 PM.jpg": {
+    "filename": "Photo 08-20-22, 4 38 51 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-20-22, 4 38 51 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.7137,
+    "probabilities": {
+      "green": 0.7137,
+      "yellow": 0.2691,
+      "brown": 0.0171
+    },
+    "has_spots": true,
+    "spot_coverage": 42.0,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 44 AM.jpg": {
+    "filename": "Photo 08-21-22, 10 34 44 AM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 44 AM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.9451,
+    "probabilities": {
+      "green": 0.9451,
+      "yellow": 0.0459,
+      "brown": 0.009
+    },
+    "has_spots": true,
+    "spot_coverage": 35.2,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 45 AM (1).jpg": {
+    "filename": "Photo 08-21-22, 10 34 45 AM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 45 AM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.9486,
+    "probabilities": {
+      "green": 0.9486,
+      "yellow": 0.0426,
+      "brown": 0.0088
+    },
+    "has_spots": true,
+    "spot_coverage": 35.5,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 45 AM (2).jpg": {
+    "filename": "Photo 08-21-22, 10 34 45 AM (2).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 45 AM (2).jpg",
+    "predicted_color": "green",
+    "confidence": 0.9508,
+    "probabilities": {
+      "green": 0.9508,
+      "yellow": 0.0413,
+      "brown": 0.0079
+    },
+    "has_spots": true,
+    "spot_coverage": 35.9,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 45 AM (3).jpg": {
+    "filename": "Photo 08-21-22, 10 34 45 AM (3).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 45 AM (3).jpg",
+    "predicted_color": "green",
+    "confidence": 0.9513,
+    "probabilities": {
+      "green": 0.9513,
+      "yellow": 0.041,
+      "brown": 0.0077
+    },
+    "has_spots": true,
+    "spot_coverage": 36.3,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 45 AM (4).jpg": {
+    "filename": "Photo 08-21-22, 10 34 45 AM (4).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 45 AM (4).jpg",
+    "predicted_color": "green",
+    "confidence": 0.9531,
+    "probabilities": {
+      "green": 0.9531,
+      "yellow": 0.0394,
+      "brown": 0.0075
+    },
+    "has_spots": true,
+    "spot_coverage": 36.2,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 45 AM.jpg": {
+    "filename": "Photo 08-21-22, 10 34 45 AM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 45 AM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.9452,
+    "probabilities": {
+      "green": 0.9452,
+      "yellow": 0.0456,
+      "brown": 0.0092
+    },
+    "has_spots": true,
+    "spot_coverage": 35.6,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 46 AM (1).jpg": {
+    "filename": "Photo 08-21-22, 10 34 46 AM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 46 AM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.9538,
+    "probabilities": {
+      "green": 0.9538,
+      "yellow": 0.0387,
+      "brown": 0.0075
+    },
+    "has_spots": true,
+    "spot_coverage": 36.4,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 46 AM.jpg": {
+    "filename": "Photo 08-21-22, 10 34 46 AM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 10 34 46 AM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.9529,
+    "probabilities": {
+      "green": 0.9529,
+      "yellow": 0.0394,
+      "brown": 0.0077
+    },
+    "has_spots": true,
+    "spot_coverage": 36.1,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 02 PM.jpg": {
+    "filename": "Photo 08-21-22, 12 40 02 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 02 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.9226,
+    "probabilities": {
+      "green": 0.9226,
+      "yellow": 0.0628,
+      "brown": 0.0146
+    },
+    "has_spots": true,
+    "spot_coverage": 39.9,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 03 PM (1).jpg": {
+    "filename": "Photo 08-21-22, 12 40 03 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 03 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.9332,
+    "probabilities": {
+      "green": 0.9332,
+      "yellow": 0.0541,
+      "brown": 0.0128
+    },
+    "has_spots": true,
+    "spot_coverage": 40.3,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 03 PM.jpg": {
+    "filename": "Photo 08-21-22, 12 40 03 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 03 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.9333,
+    "probabilities": {
+      "green": 0.9333,
+      "yellow": 0.052,
+      "brown": 0.0147
+    },
+    "has_spots": true,
+    "spot_coverage": 39.2,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 04 PM.jpg": {
+    "filename": "Photo 08-21-22, 12 40 04 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 04 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.9467,
+    "probabilities": {
+      "green": 0.9467,
+      "yellow": 0.0432,
+      "brown": 0.0101
+    },
+    "has_spots": true,
+    "spot_coverage": 40.7,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 05 PM.jpg": {
+    "filename": "Photo 08-21-22, 12 40 05 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 05 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.9374,
+    "probabilities": {
+      "green": 0.9374,
+      "yellow": 0.0508,
+      "brown": 0.0119
+    },
+    "has_spots": true,
+    "spot_coverage": 40.0,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 06 PM (1).jpg": {
+    "filename": "Photo 08-21-22, 12 40 06 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 06 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.9361,
+    "probabilities": {
+      "green": 0.9361,
+      "yellow": 0.0519,
+      "brown": 0.0121
+    },
+    "has_spots": true,
+    "spot_coverage": 39.9,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 06 PM.jpg": {
+    "filename": "Photo 08-21-22, 12 40 06 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-21-22, 12 40 06 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.9366,
+    "probabilities": {
+      "green": 0.9366,
+      "yellow": 0.0514,
+      "brown": 0.012
+    },
+    "has_spots": true,
+    "spot_coverage": 41.2,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 07 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 1 39 07 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 07 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.8406,
+    "probabilities": {
+      "green": 0.8406,
+      "yellow": 0.1568,
+      "brown": 0.0025
+    },
+    "has_spots": true,
+    "spot_coverage": 42.5,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 07 PM.jpg": {
+    "filename": "Photo 08-27-22, 1 39 07 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 07 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.8913,
+    "probabilities": {
+      "green": 0.8913,
+      "yellow": 0.1063,
+      "brown": 0.0024
+    },
+    "has_spots": true,
+    "spot_coverage": 41.8,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 08 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 1 39 08 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 08 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.8778,
+    "probabilities": {
+      "green": 0.8778,
+      "yellow": 0.1195,
+      "brown": 0.0026
+    },
+    "has_spots": true,
+    "spot_coverage": 41.4,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 08 PM.jpg": {
+    "filename": "Photo 08-27-22, 1 39 08 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 08 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.842,
+    "probabilities": {
+      "green": 0.842,
+      "yellow": 0.1555,
+      "brown": 0.0025
+    },
+    "has_spots": true,
+    "spot_coverage": 42.4,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 09 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 1 39 09 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 09 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.8429,
+    "probabilities": {
+      "green": 0.8429,
+      "yellow": 0.1548,
+      "brown": 0.0023
+    },
+    "has_spots": true,
+    "spot_coverage": 41.8,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 09 PM.jpg": {
+    "filename": "Photo 08-27-22, 1 39 09 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 09 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.8412,
+    "probabilities": {
+      "green": 0.8412,
+      "yellow": 0.1561,
+      "brown": 0.0027
+    },
+    "has_spots": true,
+    "spot_coverage": 42.1,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 10 PM.jpg": {
+    "filename": "Photo 08-27-22, 1 39 10 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 39 10 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.841,
+    "probabilities": {
+      "green": 0.841,
+      "yellow": 0.1565,
+      "brown": 0.0025
+    },
+    "has_spots": true,
+    "spot_coverage": 40.5,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 26 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 1 48 26 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 26 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.6001,
+    "probabilities": {
+      "green": 0.6001,
+      "yellow": 0.3468,
+      "brown": 0.0531
+    },
+    "has_spots": true,
+    "spot_coverage": 23.5,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 26 PM (2).jpg": {
+    "filename": "Photo 08-27-22, 1 48 26 PM (2).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 26 PM (2).jpg",
+    "predicted_color": "green",
+    "confidence": 0.5524,
+    "probabilities": {
+      "green": 0.5524,
+      "yellow": 0.3907,
+      "brown": 0.0569
+    },
+    "has_spots": true,
+    "spot_coverage": 26.4,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 26 PM.jpg": {
+    "filename": "Photo 08-27-22, 1 48 26 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 26 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.7677,
+    "probabilities": {
+      "green": 0.7677,
+      "yellow": 0.2042,
+      "brown": 0.0281
+    },
+    "has_spots": true,
+    "spot_coverage": 21.5,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 27 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 1 48 27 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 27 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.6005,
+    "probabilities": {
+      "green": 0.6005,
+      "yellow": 0.3538,
+      "brown": 0.0457
+    },
+    "has_spots": true,
+    "spot_coverage": 22.8,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 27 PM.jpg": {
+    "filename": "Photo 08-27-22, 1 48 27 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 27 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.5997,
+    "probabilities": {
+      "green": 0.5997,
+      "yellow": 0.355,
+      "brown": 0.0453
+    },
+    "has_spots": true,
+    "spot_coverage": 22.8,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 28 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 1 48 28 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 28 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.6425,
+    "probabilities": {
+      "green": 0.6425,
+      "yellow": 0.3142,
+      "brown": 0.0433
+    },
+    "has_spots": true,
+    "spot_coverage": 22.0,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 28 PM.jpg": {
+    "filename": "Photo 08-27-22, 1 48 28 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 28 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.5983,
+    "probabilities": {
+      "green": 0.5983,
+      "yellow": 0.3555,
+      "brown": 0.0463
+    },
+    "has_spots": true,
+    "spot_coverage": 23.2,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 29 PM.jpg": {
+    "filename": "Photo 08-27-22, 1 48 29 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 1 48 29 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.6529,
+    "probabilities": {
+      "green": 0.6529,
+      "yellow": 0.3039,
+      "brown": 0.0432
+    },
+    "has_spots": true,
+    "spot_coverage": 21.3,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 48 PM.jpg": {
+    "filename": "Photo 08-27-22, 2 09 48 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 48 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.5811,
+    "probabilities": {
+      "green": 0.5811,
+      "yellow": 0.3984,
+      "brown": 0.0205
+    },
+    "has_spots": true,
+    "spot_coverage": 37.5,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 49 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 2 09 49 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 49 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.5866,
+    "probabilities": {
+      "green": 0.5866,
+      "yellow": 0.3925,
+      "brown": 0.0209
+    },
+    "has_spots": true,
+    "spot_coverage": 38.6,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 49 PM.jpg": {
+    "filename": "Photo 08-27-22, 2 09 49 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 49 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.5764,
+    "probabilities": {
+      "green": 0.5764,
+      "yellow": 0.4025,
+      "brown": 0.0211
+    },
+    "has_spots": true,
+    "spot_coverage": 39.8,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 50 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 2 09 50 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 50 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.5621,
+    "probabilities": {
+      "green": 0.5621,
+      "yellow": 0.4142,
+      "brown": 0.0237
+    },
+    "has_spots": true,
+    "spot_coverage": 42.4,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 50 PM.jpg": {
+    "filename": "Photo 08-27-22, 2 09 50 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 50 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.5653,
+    "probabilities": {
+      "green": 0.5653,
+      "yellow": 0.4109,
+      "brown": 0.0238
+    },
+    "has_spots": true,
+    "spot_coverage": 42.0,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 51 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 2 09 51 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 51 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.5648,
+    "probabilities": {
+      "green": 0.5648,
+      "yellow": 0.412,
+      "brown": 0.0233
+    },
+    "has_spots": true,
+    "spot_coverage": 44.0,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 51 PM.jpg": {
+    "filename": "Photo 08-27-22, 2 09 51 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 51 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.5625,
+    "probabilities": {
+      "green": 0.5625,
+      "yellow": 0.4132,
+      "brown": 0.0242
+    },
+    "has_spots": true,
+    "spot_coverage": 42.2,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 52 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 2 09 52 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 52 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.5604,
+    "probabilities": {
+      "green": 0.5604,
+      "yellow": 0.415,
+      "brown": 0.0246
+    },
+    "has_spots": true,
+    "spot_coverage": 42.8,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 52 PM.jpg": {
+    "filename": "Photo 08-27-22, 2 09 52 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 09 52 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.5645,
+    "probabilities": {
+      "green": 0.5645,
+      "yellow": 0.4117,
+      "brown": 0.0239
+    },
+    "has_spots": true,
+    "spot_coverage": 42.6,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 48 PM.jpg": {
+    "filename": "Photo 08-27-22, 2 20 48 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 48 PM.jpg",
+    "predicted_color": "yellow",
+    "confidence": 0.7011,
+    "probabilities": {
+      "green": 0.2444,
+      "yellow": 0.7011,
+      "brown": 0.0545
+    },
+    "has_spots": true,
+    "spot_coverage": 47.1,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 49 PM.jpg": {
+    "filename": "Photo 08-27-22, 2 20 49 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 49 PM.jpg",
+    "predicted_color": "yellow",
+    "confidence": 0.7036,
+    "probabilities": {
+      "green": 0.2412,
+      "yellow": 0.7036,
+      "brown": 0.0553
+    },
+    "has_spots": true,
+    "spot_coverage": 47.5,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 50 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 2 20 50 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 50 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.7506,
+    "probabilities": {
+      "green": 0.7506,
+      "yellow": 0.2437,
+      "brown": 0.0056
+    },
+    "has_spots": true,
+    "spot_coverage": 44.8,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 50 PM.jpg": {
+    "filename": "Photo 08-27-22, 2 20 50 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 50 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.6662,
+    "probabilities": {
+      "green": 0.6662,
+      "yellow": 0.3303,
+      "brown": 0.0036
+    },
+    "has_spots": true,
+    "spot_coverage": 44.2,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 51 PM.jpg": {
+    "filename": "Photo 08-27-22, 2 20 51 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 51 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.9962,
+    "probabilities": {
+      "green": 0.9962,
+      "yellow": 0.0036,
+      "brown": 0.0002
+    },
+    "has_spots": true,
+    "spot_coverage": 28.8,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 52 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 2 20 52 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 52 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.9978,
+    "probabilities": {
+      "green": 0.9978,
+      "yellow": 0.0022,
+      "brown": 0.0
+    },
+    "has_spots": true,
+    "spot_coverage": 29.3,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 52 PM.jpg": {
+    "filename": "Photo 08-27-22, 2 20 52 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 52 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.9978,
+    "probabilities": {
+      "green": 0.9978,
+      "yellow": 0.0022,
+      "brown": 0.0
+    },
+    "has_spots": true,
+    "spot_coverage": 29.5,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 53 PM (1).jpg": {
+    "filename": "Photo 08-27-22, 2 20 53 PM (1).jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 53 PM (1).jpg",
+    "predicted_color": "green",
+    "confidence": 0.9174,
+    "probabilities": {
+      "green": 0.9174,
+      "yellow": 0.0789,
+      "brown": 0.0037
+    },
+    "has_spots": true,
+    "spot_coverage": 44.5,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 53 PM.jpg": {
+    "filename": "Photo 08-27-22, 2 20 53 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 53 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.913,
+    "probabilities": {
+      "green": 0.913,
+      "yellow": 0.0822,
+      "brown": 0.0048
+    },
+    "has_spots": true,
+    "spot_coverage": 40.2,
+    "verified": false,
+    "corrected_label": null
+  },
+  "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 54 PM.jpg": {
+    "filename": "Photo 08-27-22, 2 20 54 PM.jpg",
+    "path": "data\\kaggle_talisay\\fruit\\Photo 08-27-22, 2 20 54 PM.jpg",
+    "predicted_color": "green",
+    "confidence": 0.9382,
+    "probabilities": {
+      "green": 0.9382,
+      "yellow": 0.0559,
+      "brown": 0.0059
+    },
+    "has_spots": true,
+    "spot_coverage": 43.2,
+    "verified": false,
+    "corrected_label": null
+  }
+}
