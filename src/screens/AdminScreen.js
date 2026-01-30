@@ -174,12 +174,16 @@ export default function AdminScreen({ navigation }) {
                   <Text style={styles.predCategoryLabel}>
                     {p.category?.charAt(0).toUpperCase() + p.category?.slice(1)} Talisay
                   </Text>
-                  <Text style={styles.predRatio}>Ratio: {p.ratio}</Text>
+                  <Text style={styles.predRatio}>
+                    {p.oilYieldPercent 
+                      ? `Oil Yield: ${p.oilYieldPercent.toFixed(1)}%` 
+                      : `Ratio: ${p.ratio || 'N/A'}`}
+                  </Text>
                 </View>
                 <View style={styles.predUser}>
                   <Ionicons name="person-circle-outline" size={16} color={theme.colors.muted} />
                   <Text style={styles.predUserId} numberOfLines={1}>
-                    {String(p.userId).substring(0, 8)}...
+                    {p.userEmail || String(p.userId).substring(0, 8) + '...'}
                   </Text>
                 </View>
               </View>

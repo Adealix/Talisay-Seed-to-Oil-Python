@@ -40,17 +40,21 @@ class AdvancedSegmenter:
     - Multiple segmentation algorithms
     - Ensemble method for best results
     - Handles spots, shadows, and reflections
+    - Coin reference exclusion from fruit mask
+    - Enhanced fruit-only masking
     """
     
-    def __init__(self, use_deep_learning: bool = False):
+    def __init__(self, use_deep_learning: bool = False, exclude_coin: bool = True):
         """
         Initialize the segmenter.
         
         Args:
             use_deep_learning: Use deep learning model for segmentation
                               (requires additional model download)
+            exclude_coin: Automatically detect and exclude coin from fruit mask
         """
         self.use_deep_learning = use_deep_learning
+        self.exclude_coin = exclude_coin
         self.dl_model = None
         
         # Color ranges for Talisay fruit (HSV)
@@ -66,6 +70,7 @@ class AdvancedSegmenter:
             "black": {"lower": (0, 0, 0), "upper": (180, 255, 50)},
             "gray": {"lower": (0, 0, 50), "upper": (180, 30, 200)},
             "blue_sky": {"lower": (100, 50, 50), "upper": (130, 255, 255)},
+            "silver_metallic": {"lower": (0, 0, 100), "upper": (180, 60, 180)},  # Exclude coin
         }
         
         if use_deep_learning:
@@ -86,7 +91,8 @@ class AdvancedSegmenter:
         self,
         image: Union[str, Path, np.ndarray, Image.Image],
         method: SegmentationMethod = SegmentationMethod.ENSEMBLE,
-        return_debug: bool = False
+        return_debug: bool = False,
+        coin_info: Optional[Dict] = None
     ) -> Dict:
         """
         Segment fruit from background.
@@ -95,10 +101,13 @@ class AdvancedSegmenter:
             image: Input image
             method: Segmentation method to use
             return_debug: Include debug visualizations
+            coin_info: Optional coin detection result with center/radius
+                      If provided, coin region is excluded from fruit mask
             
         Returns:
             Dictionary with:
-            - mask: Binary mask of fruit region
+            - mask: Binary mask of fruit region (coin excluded if detected)
+            - coin_mask: Binary mask of coin region (if detected)
             - contour: Fruit contour points
             - bbox: Bounding box (x, y, w, h)
             - background_type: Detected background type
@@ -113,6 +122,7 @@ class AdvancedSegmenter:
         result = {
             "success": False,
             "mask": None,
+            "coin_mask": None,
             "contour": None,
             "bbox": None,
             "background_type": None,
@@ -125,6 +135,15 @@ class AdvancedSegmenter:
         bg_type, bg_confidence = self._detect_background_type(img)
         result["background_type"] = bg_type.value
         result["bg_detection_confidence"] = bg_confidence
+        
+        # Create coin mask if coin detected
+        coin_mask = None
+        if coin_info and coin_info.get("detected"):
+            coin_mask = self._create_coin_mask(img, coin_info)
+            result["coin_mask"] = coin_mask
+            result["coin_detected"] = True
+        else:
+            result["coin_detected"] = False
         
         # Select best method based on background
         if method == SegmentationMethod.ENSEMBLE:
@@ -143,6 +162,10 @@ class AdvancedSegmenter:
         if mask is not None:
             # Post-process mask
             mask = self._postprocess_mask(mask)
+            
+            # Exclude coin region from fruit mask (coin is NOT fruit)
+            if coin_mask is not None and self.exclude_coin:
+                mask = cv2.bitwise_and(mask, cv2.bitwise_not(coin_mask))
             
             # Find contour
             contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -183,6 +206,36 @@ class AdvancedSegmenter:
             elif len(image.shape) == 2:
                 return cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
         return None
+    
+    def _create_coin_mask(self, img: np.ndarray, coin_info: Dict) -> np.ndarray:
+        """
+        Create a simple circle mask for the detected coin.
+        
+        Since the coin is always a circle (₱5 silver coin, 25mm),
+        we create a clean circular mask for:
+        1. Visualizing the coin reference
+        2. Excluding coin from fruit analysis
+        3. Quick identification of coin position
+        
+        Args:
+            img: Source image (for dimensions)
+            coin_info: Dict with 'coin_center' and 'coin_radius'
+            
+        Returns:
+            Binary mask with coin region as white (255)
+        """
+        h, w = img.shape[:2]
+        mask = np.zeros((h, w), dtype=np.uint8)
+        
+        center = coin_info.get("coin_center")
+        radius = coin_info.get("coin_radius")
+        
+        if center and radius:
+            # Expand slightly to fully cover coin edge
+            expanded_radius = int(radius * 1.05)
+            cv2.circle(mask, center, expanded_radius, 255, -1)
+        
+        return mask
     
     def _detect_background_type(self, img: np.ndarray) -> Tuple[BackgroundType, float]:
         """

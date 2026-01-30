@@ -2,9 +2,46 @@
  * Low-level API fetch utility.
  * All service modules use this for HTTP calls.
  */
+import { Platform } from 'react-native';
+import Constants from 'expo-constants';
 import { getToken } from '../storage/tokenStorage';
 
-const API_BASE_URL = (process.env.EXPO_PUBLIC_API_BASE_URL || '').trim().replace(/\/$/, '');
+/**
+ * Get the API base URL based on platform
+ * - Web: uses localhost or configured URL
+ * - Mobile: requires actual IP address (localhost won't work)
+ */
+function getApiBaseUrl() {
+  const configuredUrl = (process.env.EXPO_PUBLIC_API_BASE_URL || '').trim().replace(/\/$/, '');
+  
+  // If a URL is configured and it's not localhost, use it
+  if (configuredUrl && !configuredUrl.includes('localhost') && !configuredUrl.includes('127.0.0.1')) {
+    return configuredUrl;
+  }
+  
+  // For web, localhost works fine
+  if (Platform.OS === 'web') {
+    return configuredUrl || 'http://localhost:3000';
+  }
+  
+  // For mobile, try to get the dev server host IP from Expo
+  const debuggerHost = Constants.expoConfig?.hostUri || Constants.manifest?.debuggerHost;
+  if (debuggerHost) {
+    // Extract IP from debuggerHost (format: "192.168.x.x:19000")
+    const hostIp = debuggerHost.split(':')[0];
+    if (hostIp && hostIp !== 'localhost' && hostIp !== '127.0.0.1') {
+      return `http://${hostIp}:3000`;
+    }
+  }
+  
+  // Fallback - localhost (will fail on physical device but works on emulator with port forwarding)
+  return 'http://localhost:3000';
+}
+
+const API_BASE_URL = getApiBaseUrl();
+
+// Log the resolved URL for debugging
+console.log(`[apiClient] Using API URL: ${API_BASE_URL} (Platform: ${Platform.OS})`);
 
 function makeUrl(path) {
   if (!API_BASE_URL) {

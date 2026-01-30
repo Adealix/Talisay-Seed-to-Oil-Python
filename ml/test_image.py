@@ -89,6 +89,14 @@ def test_image(image_path: str, length_cm: float = None, width_cm: float = None)
             bar = "█" * int(prob * 20)
             print(f"   - {color.capitalize():8}: {prob * 100:5.1f}% {bar}")
         
+        # Coin/Reference Detection
+        print(f"\n💰 REFERENCE OBJECT:")
+        if result.get('reference_detected'):
+            print(f"   ✅ ₱5 Coin Detected - using for accurate measurements")
+        else:
+            print(f"   ⚠️ No coin detected - using estimated dimensions")
+            print(f"   💡 Tip: Place a ₱5 coin (25mm) on the LEFT side for accurate sizing")
+        
         # Dimensions
         print(f"\n📏 DIMENSIONS:")
         dims = result['dimensions']

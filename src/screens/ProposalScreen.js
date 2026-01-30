@@ -1,97 +1,142 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import Screen from '../components/Screen';
-import { Body, Card, Title } from '../components/Ui';
 import { theme } from '../theme/theme';
 
 export default function ProposalScreen() {
   return (
     <Screen>
-      <Card>
-        <Title>System Proposal</Title>
-        <Body>
-          Machine Learning–Based Prediction of Seed-to-Oil Conversion Ratios in Talisay (Terminalia catappa) Fruits using
-          Morphological Feature Analysis
-        </Body>
-      </Card>
+      {/* Compact Header */}
+      <View style={styles.header}>
+        <Ionicons name="document-text" size={20} color="#fff" />
+        <Text style={styles.headerTitle}>System Proposal</Text>
+      </View>
 
-      <Section title="1.1 Introduction">
-        Terminalia catappa (Talisay) has seeds containing high-quality oil for culinary, medicinal, and biofuel
-        applications. Manual extraction/testing is destructive and labor-intensive. This prototype proposes predicting
-        oil conversion ratios by analyzing external morphological features, supporting faster, non-destructive sorting.
+      {/* Title Card */}
+      <View style={styles.titleCard}>
+        <Text style={styles.mainTitle}>ML-Based Prediction of Seed-to-Oil Conversion Ratios</Text>
+        <Text style={styles.subtitle}>Talisay (Terminalia catappa) using Morphological Feature Analysis</Text>
+      </View>
+
+      {/* Sections */}
+      <Section title="Introduction">
+        Terminalia catappa (Talisay) seeds contain high-quality oil for culinary, medicinal, and biofuel applications. Manual extraction is destructive and labor-intensive. This prototype predicts oil conversion ratios by analyzing external morphological features.
       </Section>
 
-      <Section title="1.2 Background of Study">
-        Oil potential is limited by seed variability and lack of efficient sorting. Traditional oil determination
-        requires crushing seeds. Morphological Feature Analysis (length, width, weight, color) combined with ML can
-        learn patterns correlated with oil yield and reduce waste.
+      <Section title="Background">
+        Oil potential is limited by seed variability. Traditional oil determination requires crushing seeds. Morphological Feature Analysis (length, width, weight, color) combined with ML can learn patterns correlated with oil yield.
       </Section>
 
-      <Section title="1.3 Statement of the Problem">
-        • Which physical features are significant predictors of high oil content?
-        {'\n'}• Which ML regression algorithm provides the most precise estimation?
-        {'\n'}• What is the correlation between external morphology and extracted oil weight?
+      <Section title="Problem Statement">
+        • Which physical features are significant predictors of high oil content?{'\n'}
+        • Which ML regression algorithm provides the most precise estimation?{'\n'}
+        • What is the correlation between external morphology and extracted oil weight?
       </Section>
 
-      <Section title="1.3.1 Main Problem">
-        How can Machine Learning be utilized to predict seed-to-oil conversion ratios of Terminalia catappa using only
-        external morphological characteristics?
+      <Section title="Main Problem">
+        How can Machine Learning predict seed-to-oil conversion ratios of Terminalia catappa using only external morphological characteristics?
       </Section>
 
       <Section title="Objectives">
-        General: Develop an ML-based model that estimates seed-to-oil conversion ratios using morphology.
-        {'\n\n'}Specific:
-        {'\n'}• Build a dataset of morphological traits and oil yields.
-        {'\n'}• Train/validate a model predicting oil weight from physical dimensions.
-        {'\n'}• Evaluate performance using MAE and RMSE.
+        General: Develop an ML model that estimates seed-to-oil ratios using morphology.{'\n\n'}
+        Specific:{'\n'}
+        • Build a dataset of morphological traits and oil yields{'\n'}
+        • Train/validate a model predicting oil weight from physical dimensions{'\n'}
+        • Evaluate performance using MAE and RMSE
       </Section>
 
       <Section title="Significance">
-        • Agricultural efficiency: pre-sort fruits without destructive testing.
-        {'\n'}• Industrial innovation: faster assessment for biofuel/pharma.
-        {'\n'}• Waste reduction: avoid processing low-yield seeds.
+        • Agricultural efficiency: pre-sort fruits without destructive testing{'\n'}
+        • Industrial innovation: faster assessment for biofuel/pharma{'\n'}
+        • Waste reduction: avoid processing low-yield seeds
       </Section>
 
-      <Section title="Scope and Delimitation">
-        Scope: software development + statistical modeling for oil yield prediction from morphology.
-        {'\n\n'}Delimitation: excludes chemical refinement and extraction machine engineering; limited to prediction from
-        data collected from Philippine samples.
+      <Section title="Scope">
+        Software development + statistical modeling for oil yield prediction from morphology. Excludes chemical refinement and extraction machine engineering.
       </Section>
 
-      <Card>
-        <Text style={styles.noteTitle}>Prototype note</Text>
-        <Body>
-          This app currently uses a simple image color heuristic (green/yellow/brown) and optional inputs to produce a
-          close-but-not-perfect estimate for demonstration.
-        </Body>
-      </Card>
+      <View style={styles.noteBox}>
+        <Ionicons name="information-circle" size={16} color="#666" />
+        <Text style={styles.noteText}>This app uses image color heuristics (green/yellow/brown) and ML to produce oil yield estimates.</Text>
+      </View>
     </Screen>
   );
 }
 
 function Section({ title, children }) {
   return (
-    <Card>
-      <View style={{ marginBottom: 8 }}>
-        <Text style={styles.sectionTitle}>{title}</Text>
-      </View>
-      <Body>{children}</Body>
-    </Card>
+    <View style={styles.section}>
+      <Text style={styles.sectionTitle}>{title}</Text>
+      <Text style={styles.sectionBody}>{children}</Text>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  sectionTitle: {
-    color: theme.colors.greenDark,
-    fontSize: 16,
-    fontWeight: '800',
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    backgroundColor: theme.colors.greenDark,
+    padding: 10,
+    borderRadius: 8,
+    marginBottom: 10,
   },
-  noteTitle: {
-    color: theme.colors.muted,
-    fontSize: 12,
+  headerTitle: {
+    color: '#fff',
+    fontSize: 16,
     fontWeight: '700',
-    textTransform: 'uppercase',
-    letterSpacing: 0.6,
+  },
+
+  titleCard: {
+    backgroundColor: '#e8f5e9',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 10,
+  },
+  mainTitle: {
+    fontSize: 14,
+    fontWeight: '800',
+    color: theme.colors.greenDark,
+    marginBottom: 4,
+  },
+  subtitle: {
+    fontSize: 11,
+    color: '#666',
+  },
+
+  section: {
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    padding: 10,
     marginBottom: 8,
+  },
+  sectionTitle: {
+    fontSize: 12,
+    fontWeight: '800',
+    color: theme.colors.greenDark,
+    marginBottom: 4,
+  },
+  sectionBody: {
+    fontSize: 11,
+    color: '#333',
+    lineHeight: 16,
+  },
+
+  noteBox: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 8,
+    backgroundColor: '#f5f5f5',
+    padding: 10,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  noteText: {
+    flex: 1,
+    fontSize: 10,
+    color: '#666',
+    lineHeight: 14,
   },
 });

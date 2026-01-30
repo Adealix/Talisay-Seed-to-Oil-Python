@@ -324,10 +324,10 @@ class DimensionEstimator:
             
             # ===== SILVER COIN DETECTION =====
             # Silver coin characteristics (under typical indoor/warm lighting):
-            # 1. Medium saturation (50-85) - metallic with warm reflection
+            # 1. Medium saturation (50-90) - metallic with warm reflection
             # 2. Neutral hue (< 30 or > 165) - gray/silver base tones
-            # 3. Very uniform (std_gray < 45) - KEY differentiator from fruit
-            # 4. Moderate brightness (45 < V < 165) - not washed out
+            # 3. Reasonably uniform (std_gray < 48) - KEY differentiator from fruit
+            # 4. Moderate brightness (45 < V < 170) - not washed out
             # 5. Gradient std > 35 - real coins have embossing/texture
             
             # REJECT: Definite green (plants/fruits)
@@ -335,15 +335,15 @@ class DimensionEstimator:
                 continue
             
             # REJECT: Too much texture (fruits have more texture)
-            if std_gray > 50:
+            if std_gray > 55:
                 continue
             
             # REJECT: Washed-out background areas (too bright)
-            if mean_val > 165:
+            if mean_val > 175:
                 continue
             
             # REJECT: Too dark areas
-            if mean_val < 45:
+            if mean_val < 40:
                 continue
             
             # REJECT: Featureless areas (no coin embossing/details)
@@ -352,15 +352,20 @@ class DimensionEstimator:
                 continue
             
             # REJECT: Low saturation areas (washed out gray backgrounds)
-            # Real coins under warm lighting have saturation > 55
-            if mean_sat < 55:
+            # Real coins under warm lighting have saturation > 45
+            if mean_sat < 45:
+                continue
+            
+            # REJECT: High saturation areas (fruit colors)
+            # Real silver coins have saturation < 95
+            if mean_sat > 95:
                 continue
             
             # CHECK: Is this silver/metallic coin?
-            is_neutral_hue = (mean_hue < 30) or (mean_hue > 165)
-            is_medium_saturation = 55 < mean_sat < 90  # Coins have moderate saturation
-            is_uniform = std_gray < 45
-            is_reasonable_brightness = 45 < mean_val < 165  # Not too bright or dark
+            is_neutral_hue = (mean_hue < 30) or (mean_hue > 165)  # Neutral hue with tolerance
+            is_medium_saturation = 45 < mean_sat < 95  # Coins have moderate saturation
+            is_uniform = std_gray < 48  # Reasonably uniform
+            is_reasonable_brightness = 45 < mean_val < 170  # Reasonable brightness range
             is_textured_coin = gradient_std > 35  # Has coin embossing
             
             if not (is_neutral_hue and is_medium_saturation and is_uniform and 
@@ -375,12 +380,14 @@ class DimensionEstimator:
             score += position_score * 0.20
             
             # Uniformity score: lower std is better (0.25 max)
-            uniformity_score = max(0, 1.0 - std_gray / 50)
+            uniformity_score = max(0, 1.0 - std_gray / 48)
             score += uniformity_score * 0.25
             
-            # Metallic score: lower saturation is more metallic (0.20 max)
-            metallic_score = max(0, 1.0 - mean_sat / 100)
-            score += metallic_score * 0.20
+            # Metallic score: optimal saturation 55-80 (0.20 max)
+            if 55 <= mean_sat <= 80:
+                score += 0.20
+            elif 45 < mean_sat < 95:
+                score += 0.12
             
             # Texture score: coins have gradient_std 40-100 (0.15 max)
             if 40 <= gradient_std <= 100:
@@ -388,8 +395,8 @@ class DimensionEstimator:
             elif gradient_std > 35:
                 score += 0.08
             
-            # Size score: optimal is 8-15% of width (0.20 max)
-            if 0.08 < size_ratio < 0.16:
+            # Size score: optimal is 8-18% of width (0.20 max)
+            if 0.08 < size_ratio < 0.18:
                 score += 0.20
             elif 0.06 < size_ratio < 0.22:
                 score += 0.12
@@ -400,8 +407,8 @@ class DimensionEstimator:
                 best_score = score
                 best_circle = (x, y, r)
         
-        # Require minimum score of 0.45 to confirm detection
-        if best_circle is not None and best_score >= 0.45:
+        # Require minimum score of 0.50 to confirm detection
+        if best_circle is not None and best_score >= 0.50:
             x, y, r = best_circle
             diameter_px = 2 * r
             
@@ -426,68 +433,17 @@ class DimensionEstimator:
         return result
     
     def _detect_card_reference(self, img: np.ndarray) -> Dict:
-        """Detect rectangular reference object (credit card, ID card)."""
+        """
+        Detect rectangular reference object (credit card, ID card).
+        
+        DISABLED: Card detection causes too many false positives on fruit images.
+        Users should use coins for reference instead.
+        """
         result = {"detected": False}
         
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        blurred = cv2.GaussianBlur(gray, (5, 5), 0)
-        edges = cv2.Canny(blurred, 50, 150)
-        
-        # Find contours
-        contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        
-        # Look for rectangle with credit card aspect ratio (~1.586)
-        card_ratio = 8.56 / 5.398  # Standard card ratio
-        
-        best_rect = None
-        best_score = 0
-        
-        for contour in contours:
-            # Approximate contour to polygon
-            peri = cv2.arcLength(contour, True)
-            approx = cv2.approxPolyDP(contour, 0.02 * peri, True)
-            
-            # Check if it's a quadrilateral
-            if len(approx) == 4:
-                # Get bounding rectangle
-                rect = cv2.minAreaRect(contour)
-                width, height = rect[1]
-                
-                if width > 0 and height > 0:
-                    # Ensure width > height
-                    if width < height:
-                        width, height = height, width
-                    
-                    ratio = width / height
-                    ratio_diff = abs(ratio - card_ratio)
-                    
-                    # Check if ratio is close to card ratio
-                    if ratio_diff < 0.2:
-                        # Score based on size and ratio match
-                        area = width * height
-                        area_ratio = area / (img.shape[0] * img.shape[1])
-                        
-                        if 0.01 < area_ratio < 0.3:  # Reasonable size
-                            score = (1 - ratio_diff) * 0.7 + (1 - abs(area_ratio - 0.05)) * 0.3
-                            
-                            if score > best_score:
-                                best_score = score
-                                best_rect = rect
-        
-        if best_rect is not None and best_score > 0.5:
-            width_px, height_px = best_rect[1]
-            if width_px < height_px:
-                width_px, height_px = height_px, width_px
-            
-            # Calculate pixels per cm using card width
-            card_width_cm = self.reference_info.get("width", 8.56)
-            pixels_per_cm = width_px / card_width_cm
-            
-            result["detected"] = True
-            result["pixels_per_cm"] = pixels_per_cm
-            result["card_rect"] = best_rect
-            result["confidence"] = min(0.80, 0.4 + best_score * 0.5)
-        
+        # Card detection is disabled to prevent false positives
+        # The algorithm was detecting random rectangular shapes in fruit images
+        # as "cards". Since we're focused on coin-based reference, this is disabled.
         return result
     
     def _estimate_from_contour(self, img: np.ndarray) -> Dict:

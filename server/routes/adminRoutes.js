@@ -9,5 +9,8 @@ router.use(requireAuth, requireAdmin);
 
 router.get('/users', adminController.listUsers);
 router.get('/predictions', adminController.listAllPredictions);
+router.get('/history', adminController.listAllHistory);
+router.get('/analytics/overview', adminController.getAnalyticsOverview);
+router.get('/analytics/charts', adminController.getChartData);
 
 export default router;

@@ -1,0 +1,12 @@
+Three Separate Terminals
+
+npx expo start -c
+
+cd server; npm start
+
+cd D:\talisay_ml\ml; D:\talisay_ml\.venv\Scripts\python.exe api.py
+
+
+testing in terminal:
+
+cd D:\talisay_ml\ml; D:\talisay_ml\.venv\Scripts\python.exe test_image.py "D:\talisay_ml\ml\test_images\talisay1.jpg"

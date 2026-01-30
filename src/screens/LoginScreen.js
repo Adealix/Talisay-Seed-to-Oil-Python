@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Screen from '../components/Screen';
@@ -7,7 +7,17 @@ import { useAuth } from '../hooks';
 import { theme } from '../theme/theme';
 
 export default function LoginScreen({ navigation }) {
-  const { login } = useAuth();
+  const { login, user } = useAuth();
+
+  // Redirect to Account if already logged in
+  useEffect(() => {
+    if (user) {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Tabs', params: { screen: 'Account' } }],
+      });
+    }
+  }, [user, navigation]);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,8 +32,11 @@ export default function LoginScreen({ navigation }) {
     setBusy(true);
     try {
       await login({ email: email.trim(), password });
-      // Navigate back to Account screen after successful login
-      navigation.navigate('Account');
+      // Reset navigation to Account screen after successful login
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Tabs', params: { screen: 'Account' } }],
+      });
     } catch (e) {
       setError(e?.message || 'login_failed');
     } finally {

@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
-import { Platform, SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
+import { Platform, ScrollView, StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import WebChrome from './WebChrome';
 import { theme } from '../theme/theme';
 

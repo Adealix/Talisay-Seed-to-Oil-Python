@@ -67,6 +67,7 @@ class TalisayPredictor:
         self.oil_predictor = None
         self.dimension_estimator = None
         self.segmenter = None
+        self.fruit_validator = None
         
         # Model paths
         self.models_dir = Path(__file__).parent / "models"
@@ -94,10 +95,14 @@ class TalisayPredictor:
         from models.dimension_estimator import DimensionEstimator
         self.dimension_estimator = DimensionEstimator(reference_type=self.reference_coin)
         
-        # Initialize advanced segmenter
+        # Initialize advanced segmenter (with coin exclusion enabled)
         if self.enable_segmentation:
             from models.advanced_segmenter import AdvancedSegmenter
-            self.segmenter = AdvancedSegmenter()
+            self.segmenter = AdvancedSegmenter(exclude_coin=True)
+        
+        # Initialize Talisay fruit validator
+        from models.fruit_validator import TalisayValidator
+        self.fruit_validator = TalisayValidator()
     
     def _initialize_dl_classifier(self):
         """Initialize the deep learning color classifier."""
@@ -135,7 +140,8 @@ class TalisayPredictor:
         image,
         known_dimensions: dict = None,
         reference_method: str = "auto",
-        return_visualization: bool = False
+        return_visualization: bool = False,
+        skip_fruit_validation: bool = False
     ) -> dict:
         """
         Analyze a Talisay fruit image end-to-end.
@@ -147,12 +153,16 @@ class TalisayPredictor:
             reference_method: Method for dimension estimation
                              ("auto", "coin", "aruco", "contour")
             return_visualization: Include visualization images in result
+            skip_fruit_validation: Skip Talisay fruit validation check
                              
         Returns:
-            Complete analysis result dictionary
+            Complete analysis result dictionary including:
+            - is_talisay: Whether image contains a valid Talisay fruit
+            - fruit_validation: Details about fruit detection/identification
+            - color, dimensions, oil_yield: Analysis results (if Talisay)
         """
         result = {
-            "is_talisay": True,
+            "is_talisay": False,
             "analysis_complete": False,
             "error": None,
             "pipeline_info": {
@@ -169,21 +179,38 @@ class TalisayPredictor:
                 result["error"] = "Could not load image"
                 return result
             
-            # Step 0: Background Segmentation (if enabled)
+            # Step 0a: Detect coin FIRST (for dimension reference and mask exclusion)
+            coin_info = None
+            dim_result = self.dimension_estimator.estimate_from_image(
+                img_array, 
+                reference_method=reference_method
+            )
+            if dim_result.get("reference_detected"):
+                coin_info = {
+                    "detected": True,
+                    "coin_center": dim_result.get("coin_center"),
+                    "coin_radius": dim_result.get("coin_radius"),
+                    "coin_name": dim_result.get("coin_name", "₱5 Coin"),
+                    "coin_diameter_cm": dim_result.get("coin_diameter_cm", 2.5)
+                }
+            
+            # Step 0b: Background Segmentation with coin exclusion
             segmentation_result = None
             if self.enable_segmentation and self.segmenter:
                 from models.advanced_segmenter import SegmentationMethod
                 segmentation_result = self.segmenter.segment(
                     img_array, 
                     method=SegmentationMethod.ENSEMBLE,
-                    return_debug=return_visualization
+                    return_debug=return_visualization,
+                    coin_info=coin_info  # Pass coin info to exclude from fruit mask
                 )
                 
                 result["segmentation"] = {
                     "success": segmentation_result.get("success", False),
                     "background_type": segmentation_result.get("background_type"),
                     "confidence": segmentation_result.get("confidence", 0),
-                    "fruit_area_ratio": segmentation_result.get("fruit_area_ratio", 0)
+                    "fruit_area_ratio": segmentation_result.get("fruit_area_ratio", 0),
+                    "coin_excluded": segmentation_result.get("coin_detected", False)
                 }
                 
                 if return_visualization and "debug" in segmentation_result:
@@ -191,7 +218,51 @@ class TalisayPredictor:
                         "segmentation_overlay": segmentation_result["debug"].get("overlay")
                     }
             
-            # Step 1: Color Classification
+            # Step 0c: Validate if this is a Talisay fruit
+            if not skip_fruit_validation and self.fruit_validator:
+                fruit_mask = segmentation_result.get("mask") if segmentation_result else None
+                validation_result = self.fruit_validator.validate(
+                    img_array, 
+                    segmentation_mask=fruit_mask,
+                    return_details=True
+                )
+                
+                result["fruit_validation"] = {
+                    "is_talisay": validation_result["is_talisay"],
+                    "result": validation_result["result"],
+                    "confidence": validation_result["confidence"],
+                    "message": validation_result["message"]
+                }
+                
+                if not validation_result["is_talisay"]:
+                    # Not a Talisay fruit - return early with validation message
+                    result["is_talisay"] = False
+                    result["analysis_complete"] = True
+                    result["analysis_stopped_reason"] = "not_talisay_fruit"
+                    
+                    # Include helpful information based on detection result
+                    if validation_result["result"] == "no_fruit":
+                        result["user_message"] = (
+                            "📷 No fruit detected in the image. "
+                            "Please take a clear photo of a Talisay (Terminalia catappa) fruit."
+                        )
+                    elif validation_result["result"] == "unknown":
+                        result["user_message"] = (
+                            "🍎 A fruit was detected, but it doesn't appear to be a Talisay fruit. "
+                            "Talisay fruits are typically green (immature), yellow (mature), or brown (fully ripe). "
+                            "Please provide an image of a Talisay fruit."
+                        )
+                    else:
+                        result["user_message"] = validation_result["message"]
+                    
+                    return result
+                
+                result["is_talisay"] = True
+            else:
+                result["is_talisay"] = True
+                result["fruit_validation"] = {"skipped": True}
+            
+            # Step 1: Color Classification (only if Talisay confirmed)
             color_result = self._classify_color(img_array, segmentation_result)
             result["color"] = color_result["predicted_color"]
             result["color_confidence"] = color_result["confidence"]
@@ -204,7 +275,7 @@ class TalisayPredictor:
                 result["has_spots"] = color_result["has_spots"]
                 result["spot_coverage_percent"] = color_result.get("spot_coverage_percent", 0)
             
-            # Step 2: Dimension Estimation
+            # Step 2: Dimension Estimation (using already-detected coin from step 0a)
             if known_dimensions:
                 result["dimensions"] = known_dimensions
                 result["dimensions_source"] = "user_provided"
@@ -212,11 +283,7 @@ class TalisayPredictor:
                 result["reference_detected"] = True
                 result["measurement_mode"] = "manual"
             else:
-                dim_result = self.dimension_estimator.estimate_from_image(
-                    img_array, 
-                    reference_method=reference_method
-                )
-                
+                # Use the dim_result we already computed in step 0a
                 result["dimensions"] = {
                     "length_cm": dim_result.get("length_cm", 5.0),
                     "width_cm": dim_result.get("width_cm", 3.5),
@@ -228,14 +295,9 @@ class TalisayPredictor:
                 result["reference_detected"] = dim_result.get("reference_detected", False)
                 
                 # Enhanced coin detection info
-                if dim_result.get("reference_detected"):
+                if coin_info and coin_info.get("detected"):
                     result["measurement_mode"] = "coin_reference"
-                    result["coin_info"] = {
-                        "detected": True,
-                        "coin_name": dim_result.get("coin_name", "₱5 Coin"),
-                        "coin_type": dim_result.get("coin_type", "unknown"),
-                        "coin_diameter_cm": dim_result.get("coin_diameter_cm", 2.4)
-                    }
+                    result["coin_info"] = coin_info
                     # Boost confidence when coin is detected
                     result["dimensions_confidence"] = min(0.95, dim_result.get("confidence", 0.7) + 0.15)
                 else:
@@ -659,11 +721,34 @@ def quick_analysis(
             print(f"\n❌ Error: {result['error']}")
             return
         
+        # Step 0: Check fruit validation
+        print(f"\n🔍 FRUIT VALIDATION:")
+        if "fruit_validation" in result:
+            fv = result["fruit_validation"]
+            if fv.get("skipped"):
+                print(f"   Validation: Skipped")
+            else:
+                is_talisay = fv.get("is_talisay", False)
+                if is_talisay:
+                    print(f"   ✅ Talisay fruit confirmed")
+                    print(f"   Confidence: {fv.get('confidence', 0)*100:.1f}%")
+                else:
+                    print(f"   ❌ {fv.get('result', 'unknown').upper()}")
+                    print(f"   {fv.get('message', '')}")
+                    
+                    # If not a Talisay fruit, show the user message and return
+                    if result.get("user_message"):
+                        print(f"\n{result['user_message']}")
+                    print("=" * 60)
+                    return
+        
         print(f"\n📊 SEGMENTATION:")
         if "segmentation" in result:
             seg = result["segmentation"]
             print(f"   Background Type: {seg.get('background_type', 'N/A')}")
             print(f"   Confidence: {seg.get('confidence', 0)*100:.1f}%")
+            if seg.get("coin_excluded"):
+                print(f"   ✓ Coin region excluded from fruit mask")
         
         print(f"\n🎨 COLOR CLASSIFICATION:")
         print(f"   Color: {result['color'].upper()}")

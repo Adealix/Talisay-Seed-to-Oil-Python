@@ -14,9 +14,16 @@ export const API_ENDPOINTS = {
     ME: '/api/auth/me',
   },
   PREDICTIONS: '/api/predictions',
+  HISTORY: {
+    BASE: '/api/history',
+    ITEM: (id) => `/api/history/${id}`,
+  },
   ADMIN: {
     USERS: '/api/admin/users',
     PREDICTIONS: '/api/admin/predictions',
+    HISTORY: '/api/admin/history',
+    ANALYTICS_OVERVIEW: '/api/admin/analytics/overview',
+    ANALYTICS_CHARTS: '/api/admin/analytics/charts',
   },
 };
 

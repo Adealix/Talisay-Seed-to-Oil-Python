@@ -11,14 +11,11 @@ import ScanScreen from './src/screens/ScanScreen';
 import HistoryScreen from './src/screens/HistoryScreen';
 import ProposalScreen from './src/screens/ProposalScreen';
 import AboutUsScreen from './src/screens/AboutUsScreen';
-import PublicationsScreen from './src/screens/PublicationsScreen';
-import DirectoryScreen from './src/screens/DirectoryScreen';
-import NewsScreen from './src/screens/NewsScreen';
-import EventsScreen from './src/screens/EventsScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
 import AccountScreen from './src/screens/AccountScreen';
 import AdminScreen from './src/screens/AdminScreen';
+import AdminDashboardScreen from './src/screens/AdminDashboardScreen';
 import { AuthProvider, AuthContext } from './src/context/AuthContext';
 
 const Tab = createBottomTabNavigator();
@@ -71,13 +68,10 @@ function RootNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Tabs" component={AppTabs} />
       <Stack.Screen name="AboutUs" component={AboutUsScreen} />
-      <Stack.Screen name="Publications" component={PublicationsScreen} />
-      <Stack.Screen name="Directory" component={DirectoryScreen} />
-      <Stack.Screen name="News" component={NewsScreen} />
-      <Stack.Screen name="Events" component={EventsScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen name="Admin" component={AdminScreen} />
+      <Stack.Screen name="AdminDashboard" component={AdminDashboardScreen} />
     </Stack.Navigator>
   );
 }

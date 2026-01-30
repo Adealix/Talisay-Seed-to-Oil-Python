@@ -7,6 +7,7 @@ import os
 import sys
 from pathlib import Path
 from flask import Flask, request, jsonify
+from flask.json.provider import DefaultJSONProvider
 from flask_cors import CORS
 import base64
 import io
@@ -17,8 +18,24 @@ sys.path.append(str(Path(__file__).parent))
 from config import API_CONFIG
 from predict import TalisayPredictor
 
+
+# Custom JSON provider to handle NumPy types
+class NumpyJSONProvider(DefaultJSONProvider):
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.bool_):
+            return bool(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return super().default(obj)
+
+
 # Initialize Flask app
 app = Flask(__name__)
+app.json = NumpyJSONProvider(app)  # Use custom JSON provider
 CORS(app)  # Enable CORS for React Native app
 
 # Set max content length

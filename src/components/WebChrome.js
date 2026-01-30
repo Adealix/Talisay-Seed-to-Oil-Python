@@ -42,12 +42,8 @@ export default function WebChrome({ children }) {
     { label: 'HOME', route: 'Home' },
     { label: 'ABOUT US', route: 'AboutUs' },
     { label: 'SCAN', route: 'Scan' },
+    { label: 'HISTORY', route: 'History' },
     { label: 'ACCOUNT', route: 'Account' },
-    // Commented out for now:
-    // { label: 'PUBLICATIONS', route: 'Publications' },
-    // { label: 'DIRECTORY', route: 'Directory' },
-    // { label: 'NEWS', route: 'News' },
-    // { label: 'EVENTS', route: 'Events' },
   ];
 
   return (
@@ -150,6 +146,10 @@ export default function WebChrome({ children }) {
                 <Pressable style={styles.sideButton} onPress={() => goTo('Scan')}>
                   <View style={styles.sideIconCircle}><Ionicons name="scan" size={24} color="#ffffff" /></View>
                   <Text style={styles.sideLabel}>SCAN FRUIT</Text>
+                </Pressable>
+                <Pressable style={styles.sideButton} onPress={() => goTo('History')}>
+                  <View style={styles.sideIconCircle}><Ionicons name="time" size={24} color="#ffffff" /></View>
+                  <Text style={styles.sideLabel}>HISTORY</Text>
                 </Pressable>
                 <Pressable style={styles.sideButton} onPress={() => goTo('Account')}>
                   <View style={styles.sideIconCircle}><Ionicons name="person" size={24} color="#ffffff" /></View>

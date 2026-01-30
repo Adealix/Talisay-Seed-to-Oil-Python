@@ -7,6 +7,7 @@ import mongoose from 'mongoose';
 import authRoutes from './routes/authRoutes.js';
 import predictionRoutes from './routes/predictionRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
+import historyRoutes from './routes/historyRoutes.js';
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.get('/api/health', (_req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/predictions', predictionRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/history', historyRoutes);
 
 // ---------------------------------------------------------------------------
 // Startup
